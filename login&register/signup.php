@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: login&register.html?error=email_exists");
         exit();
     }
-
     // Check if username already exists
     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM user WHERE username = ?");
     $stmt->bind_param("s", $username);
